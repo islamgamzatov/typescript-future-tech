@@ -1,0 +1,17 @@
+{
+  "name": "future-tech",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "sass-watch": "sass --watch ."
+  },
+  "devDependencies": {
+    "sass": "^1.80.6",
+    "typescript": "~5.9.3",
+    "vite": "^6.3.5"
+  }
+}
