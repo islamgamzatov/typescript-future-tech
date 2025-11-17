@@ -33,8 +33,6 @@
 
   --transition-duration: 0.2s;
 
-  --100vw: calc(100vw - var(--scrollbar-width));
-
   @include laptop {
     --container-width: #{rem(1280)};
   }
