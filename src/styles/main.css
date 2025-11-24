@@ -421,10 +421,16 @@ button[aria-label]::before {
   content: "";
 }
 
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 .header__promo {
   text-align: center;
   padding-block: 1.25rem;
   border-bottom: var(--border);
+  background-color: var(--color-dark);
 }
 @media (width <= 47.99875rem) {
   .header__promo {
