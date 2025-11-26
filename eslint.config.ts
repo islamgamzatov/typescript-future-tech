@@ -2,19 +2,19 @@ import js from "@eslint/js";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 import { defineConfig } from "eslint/config";
-import prettierPlugin from 'eslint-plugin-prettier';
-import prettierConfig from 'eslint-config-prettier';
+import prettierPlugin from "eslint-plugin-prettier";
+import prettierConfig from "eslint-config-prettier";
 
 export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
-    plugins: { 
+    plugins: {
       js,
       prettier: prettierPlugin,
-     },
+    },
     extends: ["js/recommended", prettierConfig],
     rules: {
-      // @ts-ignore - игнорируем ошибку TypeScript для Prettier конфигурации
+      // @ts-expect-error - игнорируем ошибку TypeScript для Prettier конфигурации
       ...prettierPlugin.configs.recommended.rules,
       "no-console": "warn", // Чтобы не забыть удалить console.log() перед сборкой в продакшен
       eqeqeq: "warn", // Правило, которое требует использовать сторогое сравнение (===)
