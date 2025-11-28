@@ -10,6 +10,7 @@
   background-color: var(--color-dark);
   border: var(--border);
   border-radius: rem(12);
+  border-color: var(--color-dark-20);
 
   @include laptop {
     padding: rem(14) rem(20);
