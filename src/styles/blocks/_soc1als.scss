@@ -1,28 +1,28 @@
 @use "../helpers" as *;
 
 .soc1als {
-	&__list {
-		display: flex;
-		column-gap: rem(20);
+  &__list {
+    display: flex;
+    column-gap: rem(20);
 
-		@include laptop {
-			column-gap: rem(14);
-		}
-	}
+    @include laptop {
+      column-gap: rem(14);
+    }
+  }
 
-	&__item {
-		display: flex;
-	}
+  &__item {
+    display: flex;
+  }
 
-	&__link {
-		color: var(--color-light);
+  &__link {
+    color: var(--color-light);
 
-		--size: #{rem(24)};
+    --size: #{rem(24)};
 
-		@include square(var(--size));
-		
-		@include laptop {
-			--size: #{rem(20)};
-		}
-	}
+    @include square(var(--size));
+
+    @include laptop {
+      --size: #{rem(20)};
+    }
+  }
 }

@@ -1,0 +1,32 @@
+@use "../helpers" as *;
+
+.advantage-card {
+  display: grid;
+  row-gap: rem(30);
+
+  &__link {
+    --circleSize: #{rem(52)};
+    --circleMargineLeft: #{rem(20)};
+
+    position: relative;
+    display: grid;
+    row-gap: rem(4);
+    padding-right: calc(var(--circleSize) + var(--circleMargineLeft));
+
+    &::after {
+      @include square(var(--circleSize));
+      @include abs-y;
+
+      content: "";
+      right: 0;
+      background: url("/src/images/advantages/top-right-arrow.svg") center no-repeat
+        var(--color-accent);
+      border-radius: 50%;
+    }
+  }
+
+  &__details {
+    @include fluid-text(20, 14);
+    font-family: var(--font-family-accent);
+  }
+}

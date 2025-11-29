@@ -1,29 +1,21 @@
 @use "../helpers" as *;
 
 .badge {
-	display: inline-flex;
-	padding: fluid(4, 2) fluid(4, 10);
-	border-radius: rem(6);
-	font-size: rem(16);
-	color: var(--color-light);
-	background:
+  display: inline-flex;
+  padding: fluid(4, 2) fluid(4, 10);
+  border-radius: rem(6);
+  font-size: rem(16);
+  color: var(--color-light);
+  background:
 		/* Первый слой: основной фон */
-		linear-gradient(
-			var(--color-dark-10), 
-			var(--color-dark-10)) 
-			padding-box,
-		
-		/* Второй слой: градиент для границы */
-		linear-gradient(
-			45deg,
-			var(--color-dark-15) 64%,
-			var(--color-accent) 136%
-		) border-box;
-	border: 2px solid transparent;
-	background-clip: padding-box, border-box;
+    linear-gradient(var(--color-dark-10), var(--color-dark-10)) padding-box,
+    /* Второй слой: градиент для границы */
+      linear-gradient(45deg, var(--color-dark-15) 64%, var(--color-accent) 136%) border-box;
+  border: 2px solid transparent;
+  background-clip: padding-box, border-box;
 
-	@include laptop {
-		border-radius: rem(4);
-		font-size: rem(14);
-	};
+  @include laptop {
+    border-radius: rem(4);
+    font-size: rem(14);
+  }
 }
