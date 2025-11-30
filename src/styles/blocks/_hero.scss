@@ -14,6 +14,11 @@
     padding-bottom: rem(100);
     padding-right: rem(50);
     padding-top: rem(150);
+
+    @include laptop {
+      padding-top: rem(100);
+      padding-right: rem(40);
+    }
   }
 
   &__subtitle {
@@ -44,6 +49,11 @@
     padding-left: rem(80);
     padding-bottom: rem(80);
     background: url("/src/images/resources-preview/resources-preview.png") 0 0 / cover no-repeat;
+
+    @include laptop {
+      padding-left: rem(50);
+      padding-bottom: rem(50);
+    }
   }
 
   &__advantages {
@@ -56,6 +66,11 @@
     &-item {
       --paddingX: #{rem(80)};
       padding-block: rem(50);
+
+      @include laptop {
+        padding-block: rem(40);
+        --paddingX: #{rem(50)};
+      }
 
       &:not(:first-child) {
         padding-left: var(--paddingX);
