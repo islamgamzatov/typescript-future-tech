@@ -18,5 +18,15 @@
     @include laptop {
       row-gap: rem(6);
     }
+
+    @include tablet {
+      row-gap: rem(4);
+    }
+  }
+
+  &__button {
+    @include mobile-s {
+      width: 100%;
+    }
   }
 }
