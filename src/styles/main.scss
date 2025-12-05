@@ -18,8 +18,15 @@
 @use "./blocks/resources-preview";
 @use "./blocks/advantage-card";
 @use "./blocks/hero";
+@use "./blocks/tag";
+@use "./blocks/list";
+@use "./blocks/card";
+@use "./blocks/tile";
+@use "./blocks/section";
 
 // .header,
+// .hero,
+// .section,
 // .footer {
 //   display: none !important; // <-- Скрытие
 // }
