@@ -11,6 +11,7 @@
 	}
 
 	&__button {
+		padding: rem(8) rem(16);
 		display: inline-flex;
 		align-items: center;
 		column-gap: rem(4);
@@ -25,6 +26,7 @@
 		@include laptop {
 			column-gap: rem(2);
 			font-style: rem(14);
+			padding: rem(6) rem(12);
 		}
 
 		&.is-active {
