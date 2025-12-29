@@ -26,14 +26,32 @@ class Tabs {
     this.rootElement = rootElement;
     this.buttonElements = this.rootElement.querySelectorAll<HTMLElement>(this.selectors.button);
     this.contentElements = this.rootElement.querySelectorAll<HTMLElement>(this.selectors.content);
-    const activeIndex = Array.from(this.buttonElements).findIndex((buttonElement) => 
-      buttonElement.classList.contains(this.stateClasses.isActive)
-    );
     this.state = {
-      activeTabIndex: activeIndex
+      activeTabIndex: Array.from(this.buttonElements).findIndex((buttonElement) => 
+      buttonElement.classList.contains(this.stateClasses.isActive)
+    )
     };
     this.limitTabsIndex = this.buttonElements.length - 1;
     this.bindEvents();
+  }
+
+  private updateUI(): void {
+    const { activeTabIndex } = this.state;
+
+    this.buttonElements.forEach((buttonElement, index): void => {
+      const isActive: boolean = index === activeTabIndex;
+      buttonElement.classList.toggle(this.stateClasses.isActive, isActive);
+    });
+
+    this.contentElements.forEach((contentElement, index): void => {
+      const isActive: boolean = index === activeTabIndex;
+      contentElement.classList.toggle(this.stateClasses.isActive, isActive);
+    });
+  }
+
+  private onButtonClick(buttonIndex: number): void {
+    this.state.activeTabIndex = buttonIndex;
+    this.updateUI();
   }
 
   bindEvents(): void {

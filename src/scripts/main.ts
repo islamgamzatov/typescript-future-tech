@@ -1,4 +1,4 @@
-import Header from "./header.ts";
+import Header from "./Header.ts";
 import TabsCollection from "./Tabs.ts";
 
 new Header();
