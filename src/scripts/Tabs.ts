@@ -26,13 +26,30 @@ class Tabs {
     this.rootElement = rootElement;
     this.buttonElements = this.rootElement.querySelectorAll<HTMLElement>(this.selectors.button);
     this.contentElements = this.rootElement.querySelectorAll<HTMLElement>(this.selectors.content);
-    this.state = {
+    this.state = this.getProxyState({
       activeTabIndex: Array.from(this.buttonElements).findIndex((buttonElement) =>
         buttonElement.classList.contains(this.stateClasses.isActive)
       ),
-    };
+    });
     this.limitTabsIndex = this.buttonElements.length - 1;
     this.bindEvents();
+  }
+
+  getProxyState(initialState: { activeTabIndex: number }): { activeTabIndex: number } {
+    return new Proxy(initialState, {
+      get: (target: { activeTabIndex: number }, prop: keyof { activeTabIndex: number }): number => {
+        return target[prop];
+      },
+      set: (
+        target: { activeTabIndex: number },
+        prop: keyof { activeTabIndex: number },
+        value: number
+      ): boolean => {
+        target[prop] = value;
+        this.updateUI();
+        return true;
+      },
+    });
   }
 
   private updateUI(): void {
@@ -53,13 +70,11 @@ class Tabs {
 
   private onButtonClick(buttonIndex: number): void {
     this.state.activeTabIndex = buttonIndex;
-    this.updateUI();
   }
 
   private activeTab(newTabIndex: number): void {
     this.state.activeTabIndex = newTabIndex;
     this.buttonElements[newTabIndex].focus();
-    this.updateUI();
   }
 
   private previousTab = (): void => {
@@ -107,6 +122,10 @@ class Tabs {
     }
 
     action?.();
+    // if (action) {
+    //   action();
+    //   this.updateUI();
+    // }
   };
 
   private bindEvents(): void {
