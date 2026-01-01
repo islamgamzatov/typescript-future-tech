@@ -1149,7 +1149,7 @@ button[aria-label]::before {
 }
 @media (width <= 63.99875rem) {
   .card__body {
-    padding: 1.875rem 1rem;
+    padding: 1.875rem 0;
   }
 }
 .card__grid {
@@ -1165,12 +1165,16 @@ button[aria-label]::before {
   }
 }
 .card__grid--2-cols-alt {
-  grid-template-columns: auto 1fr;
   gap: 1.875rem 1.25rem;
 }
 @media (width <= 90.06125rem) {
   .card__grid--2-cols-alt {
     gap: 1.5rem 1rem;
+  }
+}
+@media (width > 47.99875rem) {
+  .card__grid--2-cols-alt {
+    grid-template-columns: auto 1fr;
   }
 }
 .card__cell {
