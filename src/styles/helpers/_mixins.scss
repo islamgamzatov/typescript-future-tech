@@ -63,18 +63,16 @@
   overflow: hidden !important;
 }
 
-@mixin full-vw-centered-line($property: top, $left: 50%, $right: auto, $translate: -50%) {
+@mixin full-vw-centered-line($property: top) {
   position: relative;
 
   &::before {
+    @include abs-x;
+
     content: "";
-    position: absolute;
-    left: $left;
-    right: $right;
     #{$property}: 0;
-    translate: $translate;
-    width: var(--100vw);
     height: rem(1);
+    width: 100vw;
     background-color: var(--color-dark-15);
   }
 }
