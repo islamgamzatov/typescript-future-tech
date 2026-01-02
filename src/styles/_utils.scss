@@ -61,3 +61,32 @@
     }
   }
 }
+
+.circle-icon {
+  --circleSize: #{rem(52)};
+  --circleMargineLeft: #{rem(20)};
+
+  position: relative;
+  padding-right: calc(var(--circleSize) + var(--circleMargineLeft));
+  min-height: var(--circleSize);;
+  
+  @include laptop {
+    --circleSize: #{rem(44)};
+    --circleMargineLeft: #{rem(14)};
+    row-gap: rem(2);
+  }
+
+  @include mobile {
+    --circleSize: #{rem(40)};
+  }
+
+  &::after {
+    @include square(var(--circleSize));
+    @include abs-y;
+
+    content: "";
+    right: 0;
+    background: url("/src/images/advantages/top-right-arrow.svg") center no-repeat var(--color-accent);
+    border-radius: 50%;
+  }
+}
