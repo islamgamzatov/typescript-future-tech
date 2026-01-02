@@ -19,27 +19,37 @@
 			--itempaddingX: #{rem(40)};
 		}
 
-		.bordered-grid__item {
-			/*
-				Выбор элементов первой и второй колонки.
-			*/
-			&:nth-child(3n - 2),
-			&:nth-child(3n - 1) {
-				padding-right: var(--itempaddingX);
-				border-right: var(--border);
+		@include tablet-above {
+			.bordered-grid__item {
+				/*
+					Выбор элементов первой и второй колонки.
+				*/
+				&:nth-child(3n - 2),
+				&:nth-child(3n - 1) {
+					padding-right: var(--itempaddingX);
+					border-right: var(--border);
+				}
+				/*
+					Выбор второй колонки.
+				*/
+				&:nth-child(3n - 1) {
+					@include full-vw-centered-line(bottom);
+				}
+				/*
+					Выбор элементов второй и третьей колонки.
+				*/
+				&:nth-child(3n - 1),
+				&:nth-child(3n) {
+					padding-left: var(--itempaddingX);
+				}
 			}
-			/*
-				Выбор второй колонки.
-			*/
-			&:nth-child(3n - 1) {
-				@include full-vw-centered-line(bottom);
-			}
-			/*
-				Выбор элементов второй и третьей колонки.
-			*/
-			&:nth-child(3n - 1),
-			&:nth-child(3n) {
-				padding-left: var(--itempaddingX);
+		}
+
+		@include tablet	{
+			--columns: 1;
+
+			.bordered-grid__item:not(:last-child) {
+				border-bottom: var(--border);
 			}
 		}
 	}
