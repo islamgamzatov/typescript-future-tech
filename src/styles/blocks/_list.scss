@@ -2,9 +2,10 @@
 
 
 .list {
+	&,
 	&__item {
 		&:not(:last-child) {
-			border: var(--border);
+			border-bottom: var(--border);
 		}
 	}
 }

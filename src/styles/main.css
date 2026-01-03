@@ -23,6 +23,7 @@
 body,
 :where(blockquote, figure, fieldset):where([class]) {
   margin: 0;
+  overflow-x: hidden;
 }
 
 /**
@@ -1100,8 +1101,8 @@ button[aria-label]::before {
   }
 }
 
-.list__item:not(:last-child) {
-  border: var(--border);
+.list:not(:last-child), .list__item:not(:last-child) {
+  border-bottom: var(--border);
 }
 
 @media (width > 63.99875rem) {

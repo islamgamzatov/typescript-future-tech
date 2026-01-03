@@ -19,27 +19,29 @@
       </div>
       <div class="header__body">
         <div class="header__body-inner container">
-          <a class="header__logo logo" href="/" aria-label="Home" title="Home">
+          <a class="header__logo logo" href="./index.html" aria-label="Home" title="Home">
             <img class="logo__image" src="/src/images/logo.svg" alt="" width="179" height="50" />
           </a>
           <div class="header__overlay" data-js-header-overlay>
             <nav class="header__menu">
               <ul class="header__menu-list">
                 <li class="header__menu-item">
-                  <a href="" class="header__menu-link is-active">Home</a>
+                  <a href="./index.html" class="header__menu-link is-active">Home</a>
                 </li>
                 <li class="header__menu-item">
-                  <a href="" class="header__menu-link">News</a>
+                  <a href="./news.html" class="header__menu-link">News</a>
                 </li>
                 <li class="header__menu-item">
-                  <a href="" class="header__menu-link">Podcasts</a>
+                  <a href="./podcasts.html" class="header__menu-link">Podcasts</a>
                 </li>
                 <li class="header__menu-item">
-                  <a href="" class="header__menu-link">Resources</a>
+                  <a href="./resources.html" class="header__menu-link">Resources</a>
                 </li>
               </ul>
             </nav>
-            <a href="" class="header__contact-us-link button button--accent"> Contact Us </a>
+            <a href="./contacts.html" class="header__contact-us-link button button--accent">
+              Contact Us
+            </a>
           </div>
           <button
             data-js-header-burger-button
@@ -412,7 +414,7 @@
               data-js-tabs-content
             >
               <ul class="list">
-                <li class="item">
+                <li class="list__item">
                   <article class="blog-card container">
                     <div class="blog-card__author person-card">
                       <img
@@ -535,7 +537,7 @@
                     >
                   </article>
                 </li>
-                <li class="item">
+                <li class="list__item">
                   <article class="blog-card container">
                     <div class="blog-card__author person-card">
                       <img
@@ -658,7 +660,7 @@
                     >
                   </article>
                 </li>
-                <li class="item">
+                <li class="list__item">
                   <article class="blog-card container">
                     <div class="blog-card__author person-card">
                       <img
@@ -793,7 +795,7 @@
               data-js-tabs-content
             >
               <ul class="list">
-                <li class="item">
+                <li class="item__list">
                   <article class="blog-card container">
                     <div class="blog-card__author person-card">
                       <img
@@ -926,7 +928,7 @@
               data-js-tabs-content
             >
               <ul class="list">
-                <li class="item">
+                <li class="item__list">
                   <article class="blog-card container">
                     <div class="blog-card__author person-card">
                       <img
@@ -1059,7 +1061,7 @@
               data-js-tabs-content
             >
               <ul class="list">
-                <li class="item">
+                <li class="item__list">
                   <article class="blog-card container">
                     <div class="blog-card__author person-card">
                       <img
@@ -1698,13 +1700,17 @@
       <section class="about" aria-labelledby="about-title">
         <div class="about__inner container">
           <div class="about__header">
-            <img src="./src/icons/icon.svg" width="150" height="150" alt="" class="about__icon">
+            <img src="./src/icons/icon.svg" width="150" height="150" alt="" class="about__icon" />
             <div class="about__info">
               <p class="about__subtitle tag">Learn, Connect, and Innovate</p>
               <h2 id="about-title" class="about__title">Be Part of the Future Tech Revolution</h2>
             </div>
             <div class="about__description">
-              <p>Immerse yourself in the world of future technology. Explore our comprehensive resources, connect with fellow tech enthusiasts, and drive innovation in the industry. Join a dynamic community of forward-thinkers.</p>
+              <p>
+                Immerse yourself in the world of future technology. Explore our comprehensive
+                resources, connect with fellow tech enthusiasts, and drive innovation in the
+                industry. Join a dynamic community of forward-thinkers.
+              </p>
             </div>
           </div>
           <ul class="about__list">
@@ -1712,15 +1718,21 @@
               <a href="/" class="about-card tile">
                 <h3 class="about-card__title circle-icon">Resource Access</h3>
                 <div class="about-card__description">
-                  <p>Visitors can access a wide range of resources, including ebooks, whitepapers, reports.</p>
+                  <p>
+                    Visitors can access a wide range of resources, including ebooks, whitepapers,
+                    reports.
+                  </p>
                 </div>
               </a>
             </li>
             <li class="about__item">
               <a href="/" class="about-card tile">
-                <h3 class="about-card__title circle-icon circle-icon">Community Forum</h3>
+                <h3 class="about-card__title circle-icon">Community Forum</h3>
                 <div class="about-card__description">
-                  <p>Join our active community forum to discuss industry trends, share insights, and collaborate with peers.</p>
+                  <p>
+                    Join our active community forum to discuss industry trends, share insights, and
+                    collaborate with peers.
+                  </p>
                 </div>
               </a>
             </li>
@@ -1728,7 +1740,10 @@
               <a href="/" class="about-card tile">
                 <h3 class="about-card__title circle-icon">Tech Events</h3>
                 <div class="about-card__description">
-                  <p>Stay updated on upcoming tech events, webinars, and conferences to enhance your knowledge.</p>
+                  <p>
+                    Stay updated on upcoming tech events, webinars, and conferences to enhance your
+                    knowledge.
+                  </p>
                 </div>
               </a>
             </li>
@@ -1736,13 +1751,12 @@
         </div>
       </section>
     </main>
-
     <footer class="footer">
       <div class="footer__inner container">
         <div class="footer__body">
           <nav class="footer__menu">
             <div class="footer__menu-column">
-              <a href="/" class="footer__menu-main-link">Home</a>
+              <a href="./index.html" class="footer__menu-main-link">Home</a>
               <ul class="footer__menu-list">
                 <li class="footer__menu-item">
                   <a href="/" class="footer__menu-link">Features</a>
@@ -1766,7 +1780,7 @@
               </ul>
             </div>
             <div class="footer__menu-column">
-              <a href="/" class="footer__menu-main-link">News</a>
+              <a href="./news.html" class="footer__menu-main-link">News</a>
               <ul class="footer__menu-list">
                 <li class="footer__menu-item">
                   <a href="/" class="footer__menu-link">Trending Stories</a>
@@ -1789,7 +1803,7 @@
               </ul>
             </div>
             <div class="footer__menu-column">
-              <a href="/" class="footer__menu-main-link">Blogs</a>
+              <a href="./blogs.html" class="footer__menu-main-link">Blogs</a>
               <ul class="footer__menu-list">
                 <li class="footer__menu-item">
                   <a href="/" class="footer__menu-link">Quantum Computing</a>
@@ -1813,7 +1827,7 @@
               </ul>
             </div>
             <div class="footer__menu-column">
-              <a href="/" class="footer__menu-main-link">Podcasts</a>
+              <a href="./podcasts.html" class="footer__menu-main-link">Podcasts</a>
               <ul class="footer__menu-list">
                 <li class="footer__menu-item">
                   <a href="/" class="footer__menu-link">AI Revolution</a>
@@ -1828,7 +1842,7 @@
               </ul>
             </div>
             <div class="footer__menu-column">
-              <a href="/" class="footer__menu-main-link">Resources</a>
+              <a href="./resources.html" class="footer__menu-main-link">Resources</a>
               <ul class="footer__menu-list">
                 <li class="footer__menu-item">
                   <a href="/" class="footer__menu-link button"
