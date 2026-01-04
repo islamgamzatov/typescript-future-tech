@@ -3,28 +3,36 @@
 .news-card {
 	display: grid;
 	row-gap: rem(20);
+	height: 100%;
 
 	@include laptop {
 		row-gap: rem(16);
 	}
 
 	&:has(.news-card__summary) {
-		grid-template-columns: 32% 1fr;
 		align-items: center;
-		grid-template-areas: 
-			'image other'
-			'image other'
-			'image other';
-			padding-block: fluid(80, 40);
-			column-gap: rem(80);
+		padding-block: fluid(80, 40);
+		column-gap: rem(80);
 		
 		@include laptop {
 			column-gap: rem(40);
 		}
 
+		@include mobile-above {
+			grid-template-columns: 32% 1fr;
+			grid-template-areas: 
+				'image other'
+				'image other'
+				'image other';
+		}
+
 		.news-card {
 			&__image {
-				grid-area: image;
+				height: fluid(427, 213);
+
+				@include mobile-above {
+					grid-area: image;
+				}
 			}
 			
 			&__title {
@@ -42,11 +50,18 @@
 	}
 
 	&__image {
+		height: rem(222);
+		width: 100%;
+		object-fit: cover;
 		border-radius: rem(12);
 
 		@include laptop {
+			height: rem(185);
+		}
+		@include laptop {
 			border-radius: rem(10);
 		}
+
 	}
 
 	&__body {
@@ -63,5 +78,11 @@
 		justify-content: space-between;
 		align-items: center;
 		column-gap: rem(1);
+	}
+
+	&__link {
+		@include mobile-s {
+			min-width: rem(153);
+		}
 	}
 }
