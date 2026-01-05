@@ -9,14 +9,42 @@
 
 	&--2-cols {
 		--columns: 2;
+		--itemPaddingX: #{rem(80)};
+
+		@include laptop {
+			--itemPaddingX: #{rem(50)};
+		}
+
+		@include mobile {
+			--columns: 1;
+		}
+
+		.bordered-grid__item {
+
+			&:nth-child(odd) {
+				padding-right: var(--itemPaddingX);
+				border-right: var(--border);
+			}
+
+			&:nth-child(even) {
+				padding-left: var(--itemPaddingX);
+				
+				@include full-vw-centered-line(
+					bottom,
+					auto,
+					100%,
+					50%
+				);
+			}
+		}
 	}
 
 	&--3-cols {
 		--columns: 3;
-		--itempaddingX: #{rem(50)};
+		--itemPaddingX: #{rem(50)};
 
 		@include laptop {
-			--itempaddingX: #{rem(40)};
+			--itemPaddingX: #{rem(40)};
 		}
 
 		@include tablet-above {
@@ -26,7 +54,7 @@
 				*/
 				&:nth-child(3n - 2),
 				&:nth-child(3n - 1) {
-					padding-right: var(--itempaddingX);
+					padding-right: var(--itemPaddingX);
 					border-right: var(--border);
 				}
 				/*
@@ -36,11 +64,11 @@
 					@include full-vw-centered-line(bottom);
 				}
 				/*
-					Выбор элементов второй и третьей колонки.
+					Выбор элементов втор ой и третьей колонки.
 				*/
 				&:nth-child(3n - 1),
 				&:nth-child(3n) {
-					padding-left: var(--itempaddingX);
+					padding-left: var(--itemPaddingX);
 				}
 			}
 		}
