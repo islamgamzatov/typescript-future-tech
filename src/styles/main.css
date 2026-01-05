@@ -1272,6 +1272,9 @@ button[aria-label]::before {
 .section__body {
   border-block: var(--border);
 }
+.section__link {
+  max-width: 22.5rem;
+}
 
 .tabs__header {
   border-bottom: var(--border);
@@ -1495,29 +1498,34 @@ button[aria-label]::before {
     --itemPaddingX: 3.125rem;
   }
 }
+@media (width > 47.99875rem) {
+  .bordered-grid--2-cols .bordered-grid__item:nth-child(odd) {
+    padding-right: var(--itemPaddingX);
+    border-right: var(--border);
+  }
+  .bordered-grid--2-cols .bordered-grid__item:nth-child(even) {
+    padding-left: var(--itemPaddingX);
+    position: relative;
+  }
+  .bordered-grid--2-cols .bordered-grid__item:nth-child(even)::before {
+    content: "";
+    position: absolute;
+    left: auto;
+    right: 100%;
+    bottom: 0;
+    translate: 50%;
+    width: 100vw;
+    height: 0.0625rem;
+    background-color: var(--color-dark-15);
+  }
+}
 @media (width <= 47.99875rem) {
   .bordered-grid--2-cols {
     --columns: 1;
   }
-}
-.bordered-grid--2-cols .bordered-grid__item:nth-child(odd) {
-  padding-right: var(--itemPaddingX);
-  border-right: var(--border);
-}
-.bordered-grid--2-cols .bordered-grid__item:nth-child(even) {
-  padding-left: var(--itemPaddingX);
-  position: relative;
-}
-.bordered-grid--2-cols .bordered-grid__item:nth-child(even)::before {
-  content: "";
-  position: absolute;
-  left: auto;
-  right: 100%;
-  bottom: 0;
-  translate: 50%;
-  width: 100vw;
-  height: 0.0625rem;
-  background-color: var(--color-dark-15);
+  .bordered-grid--2-cols .bordered-grid__item:not(:last-child) {
+    border-bottom: var(--border);
+  }
 }
 .bordered-grid--3-cols {
   --columns: 3;
