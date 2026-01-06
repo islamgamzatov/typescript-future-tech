@@ -1,7 +1,16 @@
 @use "../helpers" as *;
 
 .news {
+	display: grid;
+	row-gap: fluid(60, 40);
 	padding-block: fluid(80, 40);
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: rem(1);
+	}
 
 	&__list {
 		display: grid;
