@@ -2077,6 +2077,12 @@ button[aria-label]::before {
   display: grid;
   grid-template-columns: 1fr 32.5rem;
 }
+@media (width <= 63.99875rem) {
+  .blog-details__body-inner {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
 .blog-details__body h2:not(:first-child), .blog-details__body h3:not(:first-child), .blog-details__body h4:not(:first-child), .blog-details__body h5:not(:first-child), .blog-details__body h6:not(:first-child) {
   margin-top: 1.875rem;
 }
@@ -2088,11 +2094,15 @@ button[aria-label]::before {
 .blog-details__body h2:not(:last-child), .blog-details__body h3:not(:last-child), .blog-details__body h4:not(:last-child), .blog-details__body h5:not(:last-child), .blog-details__body h6:not(:last-child) {
   margin-bottom: clamp(0.375rem, 0.0882352941rem + 1.1764705882vw, 1.5rem);
 }
-.blog-details__content {
-  border-right: var(--border);
+@media (width > 63.99875rem) {
+  .blog-details__content {
+    border-right: var(--border);
+  }
 }
-.blog-details__intro, .blog-details__actions {
-  border-bottom: var(--border);
+@media (width > 63.99875rem) {
+  .blog-details__intro, .blog-details__actions {
+    border-bottom: var(--border);
+  }
 }
 .blog-details__intro, .blog-details__main, .blog-details__actions, .blog-details__summary {
   padding: clamp(2.5rem, 1.862745098rem + 2.614379085vw, 5rem) 5rem;
@@ -2100,6 +2110,27 @@ button[aria-label]::before {
 @media (width <= 90.06125rem) {
   .blog-details__intro, .blog-details__main, .blog-details__actions, .blog-details__summary {
     padding-inline: 3.75rem;
+  }
+}
+@media (width <= 63.99875rem) {
+  .blog-details__intro, .blog-details__main, .blog-details__actions, .blog-details__summary {
+    padding-inline: 0;
+  }
+}
+@media (width <= 63.99875rem) {
+  .blog-details__actions, .blog-details__summary, .blog-details__intro {
+    position: relative;
+  }
+  .blog-details__actions::before, .blog-details__summary::before, .blog-details__intro::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    right: auto;
+    top: 0;
+    translate: -50%;
+    width: 100vw;
+    height: 0.0625rem;
+    background-color: var(--color-dark-15);
   }
 }
 .blog-details__actions {
