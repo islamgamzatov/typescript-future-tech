@@ -6,8 +6,9 @@
 	position: relative;
 	overflow-y: hidden;
 
-	&.is-expanded, .expandable-content__button {
-		&::before {
+	&.is-expanded {
+		&::before, 
+		.expandable-content__button {
 			@include hide;
 		}
 	}

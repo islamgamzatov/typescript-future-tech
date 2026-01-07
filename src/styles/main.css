@@ -2003,7 +2003,8 @@ button[aria-label]::before {
   position: relative;
   overflow-y: hidden;
 }
-.expandable-content.is-expanded::before, .expandable-content .expandable-content__button::before {
+.expandable-content.is-expanded::before,
+.expandable-content.is-expanded .expandable-content__button {
   opacity: 0;
   visibility: hidden;
 }
