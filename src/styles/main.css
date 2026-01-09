@@ -1552,6 +1552,7 @@ button[aria-label]::before {
 .bordered-grid--3-cols {
   --columns: 3;
   --itemPaddingX: 3.125rem;
+  column-gap: calc(var(--itemPaddingX) * 2);
 }
 @media (width <= 90.06125rem) {
   .bordered-grid--3-cols {
@@ -1571,8 +1572,16 @@ button[aria-label]::before {
     */
   }
   .bordered-grid--3-cols .bordered-grid__item:nth-child(3n-2), .bordered-grid--3-cols .bordered-grid__item:nth-child(3n-1) {
-    padding-right: var(--itemPaddingX);
-    border-right: var(--border);
+    position: relative;
+  }
+  .bordered-grid--3-cols .bordered-grid__item:nth-child(3n-2)::after, .bordered-grid--3-cols .bordered-grid__item:nth-child(3n-1)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(100% + var(--itemPaddingX));
+    width: 0.0625rem;
+    height: 100%;
+    background-color: var(--color-dark-15);
   }
   .bordered-grid--3-cols .bordered-grid__item:nth-child(3n-1) {
     position: relative;
@@ -1587,9 +1596,6 @@ button[aria-label]::before {
     width: 100vw;
     height: 0.0625rem;
     background-color: var(--color-dark-15);
-  }
-  .bordered-grid--3-cols .bordered-grid__item:nth-child(3n-1), .bordered-grid--3-cols .bordered-grid__item:nth-child(3n) {
-    padding-left: var(--itemPaddingX);
   }
 }
 @media (width <= 63.99875rem) {
@@ -1672,6 +1678,7 @@ button[aria-label]::before {
   display: flex;
   flex-direction: column;
   row-gap: clamp(0.625rem, 0.4656862745rem + 0.6535947712vw, 1.25rem);
+  height: 100%;
 }
 .about-card__title {
   font-size: clamp(1rem, 0.9044117647rem + 0.3921568627vw, 1.375rem);
@@ -1952,6 +1959,9 @@ button[aria-label]::before {
     border-radius: 0.625rem;
   }
 }
+.video-player__video--small {
+  height: clamp(13rem, 11.693627451rem + 5.3594771242vw, 18.125rem);
+}
 .video-player__panel {
   position: absolute;
   inset: 0;
@@ -2008,8 +2018,11 @@ button[aria-label]::before {
 }
 
 .video-card {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   row-gap: 1.875rem;
+  height: 100%;
 }
 @media (width <= 90.06125rem) {
   .video-card {
@@ -2019,6 +2032,10 @@ button[aria-label]::before {
 .video-card__body {
   display: grid;
   row-gap: clamp(0.25rem, 0.1544117647rem + 0.3921568627vw, 0.625rem);
+  flex-grow: 1;
+}
+.video-card__player {
+  width: 100%;
 }
 
 .expandable-content {

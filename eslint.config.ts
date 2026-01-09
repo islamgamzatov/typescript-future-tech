@@ -2,19 +2,19 @@ import js from "@eslint/js";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 import { defineConfig } from "eslint/config";
-// import prettierPlugin from "eslint-plugin-prettier";
-// import prettierConfig from "eslint-config-prettier";
+import prettierPlugin from "eslint-plugin-prettier";
+import prettierConfig from "eslint-config-prettier";
 
 export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
     plugins: {
       js,
-      // prettier: prettierPlugin,
+      prettier: prettierPlugin,
     },
     extends: [
       "js/recommended",
-      // prettierConfig
+      prettierConfig
     ],
     rules: {
       // @ts-expect-error - игнорируем ошибку TypeScript для Prettier конфигурации
