@@ -1,0 +1,69 @@
+@use "../helpers" as *;
+
+.field {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	row-gap: rem(16);
+	font-size: rem(18);
+	font-weight: rem(500);
+	color: var(--color-light);
+
+	@include laptop {
+		row-gap: rem(12);
+		font-size: rem(14);
+	}
+
+	&__body {
+		width: 100%;
+		display: flex;
+		column-gap: rem(16);
+
+		@include laptop {
+			column-gap: rem(12);
+		}
+	}
+
+	&__required-star {
+		color: var(--color-red);
+	}
+
+	&__control {
+		width: 100%;
+		height: rem(67);
+		padding-inline: rem(20);
+		background-color: var(--color-dark-10);
+		border: var(--border);
+		border-radius: rem(8);
+		color: var(--color-light);
+
+		@include laptop {
+			padding-inline: rem(16);
+			border-radius: rem(8);
+			height: rem(53);
+		}
+
+		@include hover {
+			border-color: var(--color-accent);
+			box-shadow: var(--shadow);
+		}
+
+		&::placeholder {
+			color: var(--color-dark-40);
+		}
+	}
+
+	textarea.field__control {
+		resize: vertical;
+		padding-block: rem(20);
+		min-height: rem(163);
+
+		@include laptop {
+			padding-block: rem(16);
+		}
+
+		@include mobile {
+			min-width: rem(127);
+		}
+	}
+}

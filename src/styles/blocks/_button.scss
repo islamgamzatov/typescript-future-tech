@@ -11,11 +11,13 @@
   border: var(--border);
   border-radius: rem(12);
   border-color: var(--color-dark-20);
+  min-width: rem(137);
 
   @include laptop {
     padding: rem(14) rem(20);
     font-size: rem(14);
     border-radius: rem(8);
+    min-width: rem(103);
   }
 
   @include hover {
