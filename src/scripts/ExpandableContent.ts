@@ -1,30 +1,28 @@
 import pxToRem from "./utils/pxToRem";
 
-const rootSelector = '[data-js-expandable-content]';
+const rootSelector = "[data-js-expandable-content]";
 
 class ExpandableContent {
   private rootElement: HTMLElement;
   private buttonElement: HTMLButtonElement | null;
-  
+
   private readonly selectors = {
     root: rootSelector,
-    button: '[data-js-expandable-content-button]',
+    button: "[data-js-expandable-content-button]",
   };
 
   private readonly stateClasses = {
-    isExpanded: 'is-expanded',
+    isExpanded: "is-expanded",
   };
 
   private readonly animationParams = {
     duration: 500,
-    easing: 'ease' as const,
+    easing: "ease" as const,
   };
 
   constructor(rootElement: HTMLElement) {
     this.rootElement = rootElement;
-    this.buttonElement = this.rootElement.querySelector<HTMLButtonElement>(
-      this.selectors.button
-    );
+    this.buttonElement = this.rootElement.querySelector<HTMLButtonElement>(this.selectors.button);
     this.bindEvents();
   }
 
@@ -34,10 +32,7 @@ class ExpandableContent {
     this.rootElement.classList.add(this.stateClasses.isExpanded);
 
     this.rootElement.animate(
-      [
-        { maxHeight: `${pxToRem(offsetHeight)}rem` },
-        { maxHeight: `${pxToRem(scrollHeight)}rem` },
-      ],
+      [{ maxHeight: `${pxToRem(offsetHeight)}rem` }, { maxHeight: `${pxToRem(scrollHeight)}rem` }],
       this.animationParams
     );
   }
@@ -47,7 +42,7 @@ class ExpandableContent {
   };
 
   private bindEvents(): void {
-    this.buttonElement?.addEventListener('click', this.onButtonClick);
+    this.buttonElement?.addEventListener("click", this.onButtonClick);
   }
 }
 

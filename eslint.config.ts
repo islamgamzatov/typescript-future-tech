@@ -12,10 +12,7 @@ export default defineConfig([
       js,
       prettier: prettierPlugin,
     },
-    extends: [
-      "js/recommended",
-      prettierConfig
-    ],
+    extends: ["js/recommended", prettierConfig],
     rules: {
       // @ts-expect-error - игнорируем ошибку TypeScript для Prettier конфигурации
       ...prettierPlugin.configs.recommended.rules,

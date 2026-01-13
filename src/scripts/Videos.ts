@@ -28,7 +28,9 @@ class VideoPlayer {
   }
 
   private onPlayButtonClick = (): void => {
-    if (!this.videoElement || !this.panelElement) return;
+    if (!this.videoElement || !this.panelElement) {
+      return;
+    }
 
     this.videoElement.play();
     this.videoElement.controls = true;
@@ -36,7 +38,9 @@ class VideoPlayer {
   };
 
   private onVideoPause = (): void => {
-    if (!this.videoElement || !this.panelElement) return;
+    if (!this.videoElement || !this.panelElement) {
+      return;
+    }
 
     this.videoElement.controls = false;
     this.panelElement.classList.add(this.stateClasses.isActive);
