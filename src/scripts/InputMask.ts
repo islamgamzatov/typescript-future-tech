@@ -1,4 +1,4 @@
-import IMask from "imask";
+import IMask from "imask"; // Этот импорт ОСТАЕТСЯ
 
 const rootSelector = "[data-js-input-mask]";
 
@@ -11,15 +11,10 @@ class InputMask {
   }
 
   private init(): void {
-    const isLibReady = typeof window.IMask !== "undefined";
-
-    if (isLibReady) {
-      window.IMask(this.rootElement, {
-        mask: this.rootElement.dataset.jsInputMask,
-      });
-    } else {
-      console.error('Библиотека "imask" не подключена!');
-    }
+    // Используем импортированный IMask напрямую
+    IMask(this.rootElement, {
+      mask: this.rootElement.dataset.jsInputMask,
+    });
   }
 }
 
