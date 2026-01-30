@@ -1,6 +1,12 @@
+import BaseComponent from "./BaseComponent";
+
 const rootSelector = "[data-js-tabs]";
 
-class Tabs {
+interface TabsState {
+  activeTabIndex: number;
+}
+
+class Tabs extends BaseComponent<TabsState> {
   private rootElement: HTMLElement;
   private buttonElements: NodeListOf<HTMLElement>;
   private contentElements: NodeListOf<HTMLElement>;
@@ -23,6 +29,7 @@ class Tabs {
   };
 
   constructor(rootElement: HTMLElement) {
+    super();
     this.rootElement = rootElement;
     this.buttonElements = this.rootElement.querySelectorAll<HTMLElement>(this.selectors.button);
     this.contentElements = this.rootElement.querySelectorAll<HTMLElement>(this.selectors.content);
@@ -35,24 +42,7 @@ class Tabs {
     this.bindEvents();
   }
 
-  getProxyState(initialState: { activeTabIndex: number }): { activeTabIndex: number } {
-    return new Proxy(initialState, {
-      get: (target: { activeTabIndex: number }, prop: keyof { activeTabIndex: number }): number => {
-        return target[prop];
-      },
-      set: (
-        target: { activeTabIndex: number },
-        prop: keyof { activeTabIndex: number },
-        value: number
-      ): boolean => {
-        target[prop] = value;
-        this.updateUI();
-        return true;
-      },
-    });
-  }
-
-  private updateUI(): void {
+  protected updateUI(): void {
     const { activeTabIndex } = this.state;
 
     this.buttonElements.forEach((buttonElement, index): void => {

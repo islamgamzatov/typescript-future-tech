@@ -48,6 +48,10 @@
 			box-shadow: var(--shadow);
 		}
 
+		&:user-invalid {
+			border-color: var(--color-red);
+		}
+
 		&::placeholder {
 			color: var(--color-dark-40);
 		}
